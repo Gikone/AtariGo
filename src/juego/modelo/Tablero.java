@@ -7,7 +7,12 @@ package juego.modelo;
 public class Tablero {
 
 	private Celda[][] celdas;
+	
 	private int numeroFilas, numeroColumnas;
+	
+	private int pieza, fila, columna;
+	
+	private Celda celda;
 	
 	public Tablero(int filas, int columnas) {
 		celdas = new Celda[filas][columnas];
@@ -30,7 +35,7 @@ public class Tablero {
 	public void colocar(Piedra piedra, Celda celda) {
 		celda.establecerPiedra(piedra);
 		pieza.establecerCelda(celda);
-		assert celda.estaVacia();
+		//assert celda.estaVacia(); no hace nada no devuelve nada
 	}
 	
 	public Celda obtenerCelda(int fila, int columna) {
@@ -68,7 +73,7 @@ public class Tablero {
 	}
 
 	public int obtenerGradosDeLibertad(Celda celda){
-		return 4;  // esta sin terminar no hay que poner celda
+		return 4;  //calcular grado de libertad, hay que hacer de lo ultimo
 
 	}
 
