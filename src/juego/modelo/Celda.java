@@ -8,6 +8,8 @@ public class Celda {
 	
 	private Piedra piedra;
 	
+	private Color color;
+	
 	public Celda(int fila, int columna){
 		this.fila = fila;
 		this.columna = columna;
@@ -26,13 +28,7 @@ public class Celda {
 	}
 	
 	public boolean estaVacia() {
-		boolean estado;
-		if (pieza == null) {
-			estado = true;
-		} else {
-			estado = false;
-		}
-		return estado; //version reducida -> return piedra == null;
+		return piedra == null;
 	}
 	
 	public int obtenerFila() {
@@ -43,22 +39,22 @@ public class Celda {
 		return columna;
 	}
 	
-	/*public boolean tieneIgualesCoordenadas(Celda otra) {
-		this.celda = ;
-		if( == fila) {
-			
-		}
-		if( == columna) {
-			
-		}
+	public boolean tieneIgualesCoordenadas(Celda celda) { //modificado 26/10
+		return obtenerFila() == celda.obtenerFila() && obtenerColumna() == celda.obtenerColumna();
+		
+	
 	}
-	*/
+	
 	public void eliminarPiedra() {
+		/*Una celda puede ser vaciada, a través del método eliminarPiedra. La piedra pasa a estar
+		 *también desvinculado de la celda. 
+		 */
+		
 		
 	}
 	
-	public String toString() {
-		String resultado = nombre + "-" + color;
+	public String toString() { //modificado 26/10
+		String resultado = "("+ fila + "/" + columna+")";
 		return resultado;
 	}
 }

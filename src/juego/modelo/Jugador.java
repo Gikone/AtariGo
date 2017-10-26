@@ -2,7 +2,8 @@ package juego.modelo;
 
 /**
  * 
- * @author Diego Gonzalez Roman & Jesus Martinez Taboada
+ * @author Diego Gonzalez Roman 
+ * @authorJesus Martinez Taboada
  *
  */
 
