@@ -56,6 +56,7 @@ public class Grupo {
 	}
 
 	public void eliminarPiedras(){
+		
 
 	}
 

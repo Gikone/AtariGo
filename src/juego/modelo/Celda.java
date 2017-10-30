@@ -39,21 +39,17 @@ public class Celda {
 		return columna;
 	}
 	
-	public boolean tieneIgualesCoordenadas(Celda celda) { //modificado 26/10
+	public boolean tieneIgualesCoordenadas(Celda celda) { 
 		return obtenerFila() == celda.obtenerFila() && obtenerColumna() == celda.obtenerColumna();
 		
 	
 	}
 	
 	public void eliminarPiedra() {
-		/*Una celda puede ser vaciada, a través del método eliminarPiedra. La piedra pasa a estar
-		 *también desvinculado de la celda. 
-		 */
-		
-		
+		this.piedra = null;	
 	}
 	
-	public String toString() { //modificado 26/10
+	public String toString() { 
 		String resultado = "("+ fila + "/" + columna+")";
 		return resultado;
 	}

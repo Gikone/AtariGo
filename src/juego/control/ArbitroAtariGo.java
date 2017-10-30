@@ -83,7 +83,7 @@ public class ArbitroAtariGo {
 		
 		
 		this.tablero = nuevoTablero;
-		
+		return piedra == null;
 	}
 	
 }

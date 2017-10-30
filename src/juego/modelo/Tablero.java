@@ -10,9 +10,11 @@ public class Tablero {
 	
 	private int numeroFilas, numeroColumnas;
 	
-	private int pieza, fila, columna;
+	private int fila, columna;
 	
 	private Celda celda;
+	
+	private Piedra piedra;
 	
 	public Tablero(int filas, int columnas) {
 		celdas = new Celda[filas][columnas];
@@ -34,8 +36,7 @@ public class Tablero {
 	
 	public void colocar(Piedra piedra, Celda celda) {
 		celda.establecerPiedra(piedra);
-		pieza.establecerCelda(celda);
-		//assert celda.estaVacia(); no hace nada no devuelve nada
+		piedra.establecerCelda(celda);
 	}
 	
 	public Celda obtenerCelda(int fila, int columna) {
@@ -47,7 +48,9 @@ public class Tablero {
 	}
 	
 	public boolean estaEnTablero(Celda celda) {
-		
+		//assert(numeroFilas > 8) && (numeroColumnas > 8);
+		//si se cumple que las coordenadas están en los límites del tablero, entonces
+		//el programa continúa ejecutándose; en caso contrario, se detiene.
 	}
 	
 	public int obtenerNumeroPiedras(Color color) {
@@ -64,10 +67,12 @@ public class Tablero {
 	}
 	
 	public boolean estaCompleto() {
-		
+		//if(celdas[][] == ) 	System.out.println("El tablero tiene alguna celda vacía");
+		//else 	System.out.println("El tablero no tiene ninguna celda vacía");
 	}
 	
 	public ArrayList obtenerCeldasAdyacentes(Celda celda){
+		
 		
 
 	}

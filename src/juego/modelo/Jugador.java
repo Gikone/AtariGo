@@ -3,7 +3,7 @@ package juego.modelo;
 /**
  * 
  * @author Diego Gonzalez Roman 
- * @authorJesus Martinez Taboada
+ * @author Jesus Martinez Taboada
  *
  */
 
@@ -13,7 +13,7 @@ public class Jugador {
 	
 	private Color color;
 	
-	Jugador(String nombre, Color color){
+	public Jugador(String nombre, Color color){
 		this.nombre = nombre;
 		this.color = color;
 	}
@@ -33,9 +33,9 @@ public class Jugador {
 	}
 	
 	public String toString() {
-		//devuelve el contenido del objeto en
-		//formato cadena de caracteres
-		String resultado = nombre + "-" + color;
+		//devuelve el estado del jugador en
+		//formato cadena de caracteres con su nombre y color asociado
+		String resultado = nombre + "/" + color;
 		return resultado;
 	}	
 }

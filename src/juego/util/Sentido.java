@@ -71,5 +71,25 @@ public enum Sentido {
 	private void establecerDesplazamientoVertical(int desplazamientoVertical) {
 		this.desplazamientoVertical = desplazamientoVertical;
 	}
-
+ 
+	public static void main(String[] args) {
+		//Ejemplos de como hacerlo
+		
+		/*System.out.println(Sentido.NORTE +"-" + Sentido.NORTE.obtenerDesplazamientoHorizontal());
+		System.out.println(Sentido.ESTE);
+		System.out.println(Sentido.OESTE);
+		System.out.println(Sentido.SUR);
+		*/		
+				
+		/*Sentido[] todosLosSentidos = Sentido.values();
+		for (int i = 0; i < todosLosSentidos.length; i++) {
+			System.out.println(todosLosSentidos[i]+ " / " + todosLosSentidos[i]);
+		}*/
+		
+		
+		for(Sentido sentido : Sentido.values()) {
+			System.out.println(sentido +" / " + sentido.obtenerDesplazamientoHorizontal() + sentido.obtenerDesplazamientoVertical());
+		}
+	
+	}
 }
