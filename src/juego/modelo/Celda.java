@@ -8,8 +8,6 @@ public class Celda {
 	
 	private Piedra piedra;
 	
-	private Color color;
-	
 	public Celda(int fila, int columna){
 		this.fila = fila;
 		this.columna = columna;
@@ -20,7 +18,7 @@ public class Celda {
 	}
 	
 	public Color obtenerColorDePiedra() {
-		return color;
+		return piedra.obtenerColor();
 	}
 	
 	public void establecerPiedra(Piedra piedra) {

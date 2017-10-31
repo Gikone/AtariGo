@@ -10,12 +10,6 @@ public class Tablero {
 	
 	private int numeroFilas, numeroColumnas;
 	
-	private int fila, columna;
-	
-	private Celda celda;
-	
-	private Piedra piedra;
-	
 	public Tablero(int filas, int columnas) {
 		celdas = new Celda[filas][columnas];
 		this.numeroFilas = filas;
