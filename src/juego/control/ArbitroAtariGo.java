@@ -4,7 +4,8 @@ import juego.modelo.Tablero;
 
 /**
  * 
- * @author Diego Gonzalez Rom�n & Jesus Martinez Taboada
+ * @author Diego González Román
+ * @author Jesús Martínez Taboada
  *
  */
 
@@ -17,7 +18,7 @@ public class ArbitroAtariGo {
 	
 	ArbitroAtariGo(Tablero tablero, Jugador jugador){ //El constructor genera el tablero
 		this.tablero = tablero;
-		this.jugador = jugador;
+		this.jugador = jugador;//supuestamente no hay jugadorXD
 		
 	}
 	
