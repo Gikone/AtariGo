@@ -4,7 +4,8 @@ import juego.modelo.Tablero;
 
 /**
  * 
- * @author Diego Gonzalez Rom�n & Jesus Martinez Taboada
+ * @author Diego González Román
+ * @author Jesús Martínez Taboada
  *
  */
 
@@ -17,11 +18,11 @@ public class ArbitroAtariGo {
 	
 	ArbitroAtariGo(Tablero tablero, Jugador jugador){ //El constructor genera el tablero
 		this.tablero = tablero;
-		this.jugador = jugador;
-		
 	}
 	
-	public /*static*/ void registrarJugadoresEnOrden(String nombre) {
+	public void registrarJugadoresEnOrden(String nombre) {
+		Jugador jugador = new Jugador;
+		
 		/*Primera invocacion: registra jugador con piedras negras(turno inicial).
 		*Segunda invocacion: registra jugador con piedras blancas.
 		*Sucesivas invocaciones: nada.

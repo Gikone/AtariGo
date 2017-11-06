@@ -30,17 +30,19 @@ public class Tablero {
 	
 	public void colocar(Piedra piedra, Celda celda) {
 		celda.establecerPiedra(piedra);
-		piedra.establecerCelda(celda);
+		piedra.colocarEn(celda);
 	}
 	
 	public Celda obtenerCelda(int fila, int columna) {
 		return celdas[fila][columna];
 	}
 	
+	/*
 	public Celda obtenerCeldaConMismasCoordenadas(Celda celda) {
+	public Celda obtenerCeldaConMismasCoordenadas(int fila, int columna) {
 		return celdas[fila][columna];
 	}
-	
+*/
 	public boolean estaEnTablero(Celda celda) {
 		//assert(numeroFilas > 8) && (numeroColumnas > 8);
 		//si se cumple que las coordenadas están en los límites del tablero, entonces
@@ -89,11 +91,11 @@ public class Tablero {
 		return resultado;
 	}
 	
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		Tablero tablero = new Tablero(3,3);
 		Pieza pieza = new Pieza(Color.BLANCO);
 		Celda celda = tablero.obtenerCelda(0, 0);
 		tablero.colocar(pieza, celda);
 		
-	}*/
+	}
 }

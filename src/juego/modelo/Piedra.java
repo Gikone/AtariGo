@@ -8,9 +8,10 @@ package juego.modelo;
 
 public class Piedra {
 	
-	//private static Color color; //ponemos static porque una piedra tiene siempre asociado un color
+	private static Color color; //ponemos static porque una piedra tiene siempre asociado un color
 
 	private Celda celda;
+	
 	
 	public Piedra(Color color, Celda celda) {
 		this.obtenerColor(color);

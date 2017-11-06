@@ -16,6 +16,7 @@ public class Jugador {
 	public Jugador(String nombre, Color color){
 		this.nombre = nombre;
 		this.color = color;
+
 	}
 	
 	public Color obtenerColor() {
@@ -28,7 +29,7 @@ public class Jugador {
 	
 	//Genera una nueva pieza del color actual del jugador
 	public Piedra generarPiedra() {
-		Piedra piedra = new Piedra(this.obtenerColor());
+		Piedra piedra = new Piedra(this.obtenerColor(), this.obtenerCelda());
 		return piedra;
 	}
 	
@@ -38,4 +39,9 @@ public class Jugador {
 		String resultado = nombre + "/" + color;
 		return resultado;
 	}	
+	
+	/*public static void main(String[] args) {
+		Color color = new color;
+		}
+		*/
 }

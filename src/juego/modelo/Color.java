@@ -19,5 +19,9 @@ public enum Color {
 	public char toChar() {
 		return carácter;
 	}
-	//Color c1, c2;
+	
+	/*public static void main(String[] args) {
+		Jugador jugador =
+		
+		*/
 }
