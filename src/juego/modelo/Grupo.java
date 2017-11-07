@@ -1,6 +1,5 @@
 package juego.modelo;
 
-import java.util.ArrayList;
 /**
  * 
  * @author González Román, Diego
@@ -8,6 +7,8 @@ import java.util.ArrayList;
  * @author Martínez Taboada, Jesús
  * 
  */
+
+import java.util.ArrayList;
 
 public class Grupo {
 
@@ -78,8 +79,7 @@ public class Grupo {
 	}
 
 	public String toString() {
-		// devuelve el contenido del objeto en
-		// formato cadena de caracteres
+		// devuelve el contenido del objeto en formato cadena de caracteres
 		String resultado = nombre + "-" + color;
 		return resultado;
 	}
