@@ -2,16 +2,20 @@ package juego.modelo;
 
 /**
  * 
- * @author Diego Gonzalez Roman 
- * @author Jesus Martinez Taboada
- *
+ * @author González Román, Diego
+ * 
+ * @author Martínez Taboada, Jesús
+ * 
  */
+
 
 public class Jugador {
 
 	private String nombre;
 	
 	private Color color;
+	
+	//private Celda celda;
 	
 	public Jugador(String nombre, Color color){
 		this.nombre = nombre;
@@ -27,9 +31,14 @@ public class Jugador {
 		return nombre;
 	}
 	
-	//Genera una nueva pieza del color actual del jugador
+	/**Genera una nueva piedra para el jugador
+	 * 
+	 * 
+	 * @return
+	 */
+	
 	public Piedra generarPiedra() {
-		Piedra piedra = new Piedra(this.obtenerColor(), this.obtenerCelda());
+		Piedra piedra = new Piedra(this.obtenerColor());
 		return piedra;
 	}
 	

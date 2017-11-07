@@ -2,10 +2,12 @@ package juego.modelo;
 
 /**
  * 
- * @author Diego Gonzalez Roman 
- * @author Jesus Martinez Taboada
- *
+ * @author González Román, Diego
+ * 
+ * @author Martínez Taboada, Jesús
+ * 
  */
+
 
 public enum Color {
 

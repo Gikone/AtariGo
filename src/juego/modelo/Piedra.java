@@ -2,24 +2,27 @@ package juego.modelo;
 
 /**
  * 
- *@author Diego Gonzalez Roman & Jesus Martinez Taboada
- *
+ * @author González Román, Diego
+ * 
+ * @author Martínez Taboada, Jesús
+ * 
  */
+
 
 public class Piedra {
 	
-	private static Color color; //ponemos static porque una piedra tiene siempre asociado un color
+	private Color color;
 
 	private Celda celda;
 	
 	
-	public Piedra(Color color, Celda celda) {
-		this.obtenerColor(color);
+	public Piedra(Color color) {
+		this.color = color;//obtenerColor();
 		this.colocarEn(celda);
 	}
 	
 	public Color obtenerColor() {
-		return color;
+		return this.color;
 	}
 	
 	public void colocarEn(Celda celda){
@@ -27,7 +30,7 @@ public class Piedra {
 	
 	}  
 	
-	public Celda obtenerCelda() {
+	public Celda obtenerCelda() { 
 		return celda;
 	}
 	

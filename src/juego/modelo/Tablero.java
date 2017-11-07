@@ -1,7 +1,11 @@
 package juego.modelo;
 
 /**
- * @author Jesús Martínez Taboada & Diego Gonzalez Roman
+ * 
+ * @author González Román, Diego
+ * 
+ * @author Martínez Taboada, Jesús
+ * 
  */
 
 public class Tablero {

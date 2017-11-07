@@ -1,5 +1,13 @@
 package juego.modelo;
 
+/**
+ * 
+ * @author González Román, Diego
+ * 
+ * @author Martínez Taboada, Jesús
+ * 
+ */
+
 public class Celda {
 	
 	private int fila;
