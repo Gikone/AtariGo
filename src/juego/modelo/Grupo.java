@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Grupo {
 
-	private ArrayList<Celda> celdas; // declarar ArrayList<tipo> nombre
+	private ArrayList celdas = new ArrayList(); // declarar ArrayList<tipo> nombre
 
 	private Tablero tablero;
 
@@ -20,8 +20,6 @@ public class Grupo {
 
 	public Grupo(Celda celda, Tablero tablero) {
 		this.id = id++;
-		//this.celda = celda;
-		this.celdas = new ArrayList<Celda>; // istancio array vacío
 		this.celdas.add(celda); // meto celda en array
 		this.tablero = tablero;
 

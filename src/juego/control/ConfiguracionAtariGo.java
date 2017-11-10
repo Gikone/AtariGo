@@ -2,24 +2,32 @@ package juego.control;
 
 public class ConfiguracionAtariGo {
 
-  int TAMAÑO_POR_DEFECTO() = 9;
-  int TAMAÑOS[] = {9, 13, 19};   //movidaca de cuidao
-  char LETRA_NO_UTILIZADA = 'l';
-  
-  private constructorAtariGo(){//el constructor es privado
-     
-  }
+  public static int TAMAÑO_POR_DEFECTO = 9;
+  private static int TAMAÑOS[] = {9, 13, 19};   //movidaca de cuidao
+  public static char LETRA_NO_UTILIZADA = 'l';
+
   //lo q pongo a continuac hay q poner algo en el constructor y decir si es public o private o dejarlo amigable
-  int obtenerTamañoMaximo(){
-    
+  public static int obtenerTamañoMaximo(){
+    int maximo = 0;
+    for (int i = 0; i < TAMAÑOS.length; i++) {
+      if (TAMAÑOS[i] > maximo){
+        maximo = TAMAÑOS[i];
+      }
+    }
+    return maximo;
   }
-  
-  boolean esTamañoValido(int tamañoSugerido){
-    
+
+  public static boolean esTamañoValido(int tamañoSugerido){
+    for (int i = 0; i < TAMAÑOS.length; i++) {
+      if (TAMAÑOS[i] == tamañoSugerido){
+        return true;
+      }
+    }
+    return false;
   }
-  
-  String generarAyuda(){
-    
+
+  public static String generarAyuda(){
+    return null;
   }
   
 }

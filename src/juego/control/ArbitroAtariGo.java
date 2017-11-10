@@ -1,5 +1,8 @@
 package juego.control;
 
+import juego.modelo.Celda;
+import juego.modelo.Color;
+import juego.modelo.Jugador;
 import juego.modelo.Tablero;
 
 /**
@@ -13,7 +16,7 @@ public class ArbitroAtariGo {
 	
 	private Tablero tablero;
 	
-	private Jugador jugador;
+	private Jugador[] jugadores;
 	
 	
 	ArbitroAtariGo(Tablero tablero, Jugador jugador){ //El constructor genera el tablero
@@ -21,7 +24,11 @@ public class ArbitroAtariGo {
 	}
 	
 	public void registrarJugadoresEnOrden(String nombre) {
-		Jugador jugador = new Jugador;
+		if (jugadores[0] == null){
+			jugadores[0] = new Jugador(nombre, Color.BLANCO);
+		}else{
+			jugadores[1] = new Jugador(nombre, Color.NEGRO);
+		}
 		
 		/*Primera invocacion: registra jugador con piedras negras(turno inicial).
 		*Segunda invocacion: registra jugador con piedras blancas.
