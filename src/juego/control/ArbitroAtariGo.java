@@ -19,15 +19,15 @@ public class ArbitroAtariGo {
 	private Jugador[] jugadores;
 	
 	
-	ArbitroAtariGo(Tablero tablero, Jugador jugador){ //El constructor genera el tablero
+	ArbitroAtariGo(Tablero tablero/*, Jugador jugador*/){ //Jugador? sobra?
 		this.tablero = tablero;
 	}
 	
 	public void registrarJugadoresEnOrden(String nombre) {
 		if (jugadores[0] == null){
-			jugadores[0] = new Jugador(nombre, Color.BLANCO);
+			jugadores[0] = new Jugador(nombre, Color.NEGRO);
 		}else{
-			jugadores[1] = new Jugador(nombre, Color.NEGRO);
+			jugadores[1] = new Jugador(nombre, Color.BLANCO);
 		}
 		
 		/*Primera invocacion: registra jugador con piedras negras(turno inicial).
@@ -38,7 +38,9 @@ public class ArbitroAtariGo {
 	}
 	
 	public Jugador obtenerJugadorConTurno() {
-		
+		for (int i = 0; i < jugadores; i++) {
+			jugadores[i] = new Jugador(jugadores);
+		}
 	}
 	
 	public Jugador obtenerJugadorSinTurno() {

@@ -12,11 +12,13 @@ import java.util.ArrayList;
 
 public class Grupo {
 
-	private ArrayList celdas = new ArrayList(); // declarar ArrayList<tipo> nombre
+	private ArrayList celdas = new ArrayList(); // todavia no se ha dado con <tipo>
 
 	private Tablero tablero;
 
 	private int id = 0;
+
+
 
 	public Grupo(Celda celda, Tablero tablero) {
 		this.id = id++;
@@ -36,21 +38,29 @@ public class Grupo {
 
 	public Color obtenerColor() {
 		/* debe devolver null al haber capturado grupo */
+		Celda celda = (Celda) celdas.get(0);
+		if(celda.estaVacia()){
+		    return null;
 
-		if (estaVivo() == false) {
-			return null;
-		} else {
-			return celda.obtenerColorDePiedra();
-		}
+        }
+        return celda.obtenerColorDePiedra();
 	}
 
 	public boolean estaVivo() {
-		return (tablero.obtenerGradosDeLibertad(celda) > 0); // terminado
-
+        int gradoLibertad = 0; //contador
+	    for (int i = 0; i < obtenerTamaño(); i++) {
+            Celda celda = (Celda) celdas.get(i);
+	        gradoLibertad += tablero.obtenerGradosDeLibertad(celda);
+        }
+        if (gradoLibertad != 0){
+	        return true;
+        }
+        return false;
 	}
 
 	public int obtenerTamaño() {
-		return (tablero.obtenerNumeroFilas() * tablero.obtenerNumeroColumnas());
+		return celdas.size();
+
 	}
 
 	public boolean contiene(Celda celda) {
@@ -65,21 +75,20 @@ public class Grupo {
 	}
 
 	public void eliminarPiedras() {
-		for(int i = 0; i < grupo.celdas.size(); i++){
-			grupo.celdas.get(i).eliminarPiedra();
-	//get(i) devuelve Celda por lo que ya no hay que poner la clase Celda al utilizar el método eliminarPiedra
+		for(int i = 0; i < obtenerTamaño(); i++){
+            Celda celda = (Celda) celdas.get(i);
+		    celda.eliminarPiedra();
 		}
 	}
 
-	public Grupo generarCopiaEnOtroTablero(Tablero otroTablero) {
+	public Grupo generarCopiaEnOtroTablero(Tablero otroTablero) { //esta mal corregir
 		otroTablero = this.tablero;
 		return new Grupo(celda, otroTablero);
 	}
 
 	public String toString() {
 		// devuelve el contenido del objeto en formato cadena de caracteres
-		String resultado = nombre + "-" + color;
-		return resultado;
+        return null;
 	}
 
 }

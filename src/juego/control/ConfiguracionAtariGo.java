@@ -6,6 +6,10 @@ public class ConfiguracionAtariGo {
   private static int TAMAÑOS[] = {9, 13, 19};   //movidaca de cuidao
   public static char LETRA_NO_UTILIZADA = 'l';
 
+  private ConfiguracionAtariGo(){ //lo pide el uml
+
+  }
+
   //lo q pongo a continuac hay q poner algo en el constructor y decir si es public o private o dejarlo amigable
   public static int obtenerTamañoMaximo(){
     int maximo = 0;

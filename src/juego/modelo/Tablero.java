@@ -1,5 +1,7 @@
 package juego.modelo;
 
+import juego.util.Sentido;
+
 import java.util.ArrayList;
 
 /**
@@ -42,6 +44,7 @@ public class Tablero {
 	}
 	
 	public Celda obtenerCelda(int fila, int columna) {
+
 		return celdas[fila][columna];
 	}
 	
@@ -58,7 +61,7 @@ public class Tablero {
 			}
 		}
 		return false;
-		//assert(numeroFilas > 8) && (numeroColumnas > 8);
+
 		//si se cumple que las coordenadas están en los límites del tablero, entonces
 		//el programa continúa ejecutándose; en caso contrario, se detiene.
 	}
@@ -99,9 +102,20 @@ public class Tablero {
 	}
 	
 	public ArrayList obtenerCeldasAdyacentes(Celda celda){
-		
-		
-
+		ArrayList adyacentes = new ArrayList();
+		if(celda.obtenerFila() > 0) { //copiar y remplazar sentidos
+			adyacentes.add(obtenerCelda(celda.obtenerFila() + Sentido.NORTE.obtenerDesplazamientoVertical(), celda.obtenerColumna()));
+		}
+		if(celda.obtenerFila() > 0) {
+			adyacentes.add(obtenerCelda(celda.obtenerFila() + Sentido.SUR.obtenerDesplazamientoVertical(), celda.obtenerColumna()));
+		}
+		if(celda.obtenerFila() > 0){
+			adyacentes.add(obtenerCelda(celda.obtenerFila(), celda.obtenerColumna() + Sentido.ESTE.obtenerDesplazamientoHorizontal()));
+        }
+		if(celda.obtenerFila() > 0){
+			adyacentes.add(obtenerCelda(celda.obtenerFila(), celda.obtenerColumna() + Sentido.OESTE.obtenerDesplazamientoHorizontal()));
+		}
+        return adyacentes;
 	}
 
 	public int obtenerGradosDeLibertad(Celda celda){
@@ -113,7 +127,7 @@ public class Tablero {
 
 	}
 
-	public ArrayList obtenerGruposDelJugador(Jugador jugador){
+	public ArrayList obtenerGruposDelJugador(Jugador jugador){ //arraylist con <>
 		ArrayList gruposEncontrados = new ArrayList();
 		for (int i = 0; i < grupos.size(); i++) {
 			if(((Grupo) grupos.get(i)).obtenerColor() == jugador.obtenerColor()){
