@@ -81,7 +81,7 @@ public class Grupo {
 		}
 	}
 
-	public Grupo generarCopiaEnOtroTablero(Tablero otroTablero) { //esta mal corregir
+	public Grupo generarCopiaEnOtroTablero(Tablero otroTablero) {
 		for (int i = 0; i < celdas.size(); i++) {
 			Celda celda = (Celda) celdas.get(i);
 			Piedra piedra = new Piedra(celda.obtenerColorDePiedra());

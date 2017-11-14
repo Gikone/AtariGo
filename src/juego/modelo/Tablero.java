@@ -132,6 +132,7 @@ public class Tablero {
 	}
 
 	public Tablero generarCopia(){
+		Tablero copiaTablero = new Tablero(numeroFilas, numeroColumnas);
 
 	}
 
