@@ -82,8 +82,22 @@ public class Grupo {
 	}
 
 	public Grupo generarCopiaEnOtroTablero(Tablero otroTablero) { //esta mal corregir
-		otroTablero = this.tablero;
-		return new Grupo(celda, otroTablero);
+		for (int i = 0; i < celdas.size(); i++) {
+			Celda celda = (Celda) celdas.get(i);
+			Piedra piedra = new Piedra(celda.obtenerColorDePiedra());
+			otroTablero.colocar(piedra, otroTablero.obtenerCeldaConMismasCoordenadas(celda));
+
+		}
+		Celda primeraCelda = (Celda) celdas.get(0);
+		Celda primeraOtroTablero = otroTablero.obtenerCeldaConMismasCoordenadas(primeraCelda);
+		Grupo grupo = new Grupo(primeraOtroTablero, otroTablero);
+		for (int i = 1; i < celdas.size() ; i++) {
+			Celda celda = (Celda) celdas.get(i);
+			Celda otraCelda = otroTablero.obtenerCeldaConMismasCoordenadas(celda);
+			Grupo grupoTemp = new Grupo(otraCelda, otroTablero);
+			grupo.añadirCeldas(grupoTemp);
+		}
+		return grupo;
 	}
 
 	public String toString() {

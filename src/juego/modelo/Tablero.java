@@ -48,12 +48,11 @@ public class Tablero {
 		return celdas[fila][columna];
 	}
 	
-	/*
+
 	public Celda obtenerCeldaConMismasCoordenadas(Celda celda) {
-	public Celda obtenerCeldaConMismasCoordenadas(int fila, int columna) {
-		return celdas[fila][columna];
+		return obtenerCelda(celda.obtenerFila(), celda.obtenerColumna());
 	}
-*/
+
 	public boolean estaEnTablero(Celda celda) {
 		if (celda.obtenerColumna() >= 0 && celda.obtenerColumna() < obtenerNumeroColumnas()) {
 			if (celda.obtenerFila() >= 0 && celda.obtenerFila() < obtenerNumeroFilas()) {
@@ -119,7 +118,16 @@ public class Tablero {
 	}
 
 	public int obtenerGradosDeLibertad(Celda celda){
-		return 4;  //calcular grado de libertad, hay que hacer de lo ultimo
+		ArrayList adyacentes = new ArrayList();
+		adyacentes = obtenerCeldasAdyacentes(celda);
+		int gradosLibertad = 0;
+		for (int i = 0; i < adyacentes.size(); i++) {
+			Celda adyacente = (Celda) adyacentes.get(i);
+			if(adyacente.estaVacia()){
+				gradosLibertad++;
+			}
+		}
+		return gradosLibertad;
 
 	}
 
