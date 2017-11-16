@@ -14,9 +14,7 @@ public class Jugador {
 	private String nombre;
 	
 	private Color color;
-	
-	//private Celda celda;
-	
+
 	public Jugador(String nombre, Color color){
 		this.nombre = nombre;
 		this.color = color;

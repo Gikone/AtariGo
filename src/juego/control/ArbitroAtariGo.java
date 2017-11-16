@@ -19,7 +19,7 @@ public class ArbitroAtariGo {
 	private Jugador[] jugadores;
 	
 	
-	ArbitroAtariGo(Tablero tablero/*, Jugador jugador*/){ //Jugador? sobra?
+	public ArbitroAtariGo(Tablero tablero){ //Jugador? sobra?
 		this.tablero = tablero;
 	}
 	
@@ -38,13 +38,14 @@ public class ArbitroAtariGo {
 	}
 	
 	public Jugador obtenerJugadorConTurno() {
-		for (int i = 0; i < jugadores; i++) {
-			jugadores[i] = new Jugador(jugadores);
-		}
+		Jugador jugadorTurno = new Jugador();
+		if()
+
+		return jugadores[0];
 	}
 	
 	public Jugador obtenerJugadorSinTurno() {
-		
+		return jugadores[1];
 	}
 	
 	public void cambiarTurno() {
@@ -54,19 +55,19 @@ public class ArbitroAtariGo {
 	}
 	
 	public Tablero obtenerTablero() {
-		
+		return tablero;
 	}
 	
 	
 	public boolean estaAcabado() {
 		//permite consultar si el juego está acabado. El juego finaliza cuando un
 		//jugador ha realizado una captura sobre el contrario.
-
+		return false; //terminar luego, muy compleja
 		
 	}
 	
 	public Jugador obtenerGanador() {
-		
+		return jugadores[0]; // esta sin terminar, es la mas complicada
 	
 	}
 	
@@ -80,10 +81,11 @@ public class ArbitroAtariGo {
 		* esMovimientoLegal puesto que se supone que siempre ha sido consultada previamente la
 		* legalidad de la jugada. Finalmente, gestiona el cambio de turno.
 		*/
+
 		
 	}
 	
-	public boolean esMovimientoLegal(Celda celda, Tablero nuevoTablero) { //donde marcamos que nuevoTablero es de tipo Tablero
+	public boolean esMovimientoLegal(Celda celda) {
 		/*comprueba si la jugada es legal en base a las reglas del juego: la
 		* celda seleccionada, o bien está vacía, o bien el movimiento no genera una situación de suicidio
 		* Para comprobar el suicidio, se debe generar una copia del tablero actual, y realizar el movimiento
@@ -91,9 +93,8 @@ public class ArbitroAtariGo {
 		* esta forma el tablero original nunca se ve afectado.
 		*/
 		
-		
-		this.tablero = nuevoTablero;
-		return piedra == null;
+
+		return  true;
 	}
 	
 }

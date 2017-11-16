@@ -133,7 +133,14 @@ public class Tablero {
 
 	public Tablero generarCopia(){
 		Tablero copiaTablero = new Tablero(numeroFilas, numeroColumnas);
+        for (int i = 0; i < obtenerNumeroColumnas(); i++) {
+            for (int j = 0; j < obtenerNumeroFilas(); j++) {
+                if ( ! obtenerCelda(i,j).estaVacia())
+                    copiaTablero.colocar(obtenerCelda(i,j).obtenerPiedra(),obtenerCelda(i,j));
+            }
 
+        }
+        return copiaTablero;
 	}
 
 	public ArrayList obtenerGruposDelJugador(Jugador jugador){ //arraylist con <>
