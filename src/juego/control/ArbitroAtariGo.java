@@ -19,7 +19,7 @@ public class ArbitroAtariGo {
 	private Jugador[] jugadores;
 	
 	
-	public ArbitroAtariGo(Tablero tablero){ //Jugador? sobra?
+	public ArbitroAtariGo(Tablero tablero){
 		this.tablero = tablero;
 	}
 	
@@ -39,8 +39,9 @@ public class ArbitroAtariGo {
 	
 	public Jugador obtenerJugadorConTurno() {
 		Jugador jugadorTurno = new Jugador();
-		if()
-
+		if(esMovimientoLegal == true){
+			/*.*/jugar();
+		}
 		return jugadores[0];
 	}
 	
@@ -50,8 +51,8 @@ public class ArbitroAtariGo {
 	
 	public void cambiarTurno() {
 		//Avanza turno segun que jugador ha realizado el ultimo movimiento.
-		 
-		 
+		obtenerJugadorConTurno();
+		
 	}
 	
 	public Tablero obtenerTablero() {
@@ -81,8 +82,16 @@ public class ArbitroAtariGo {
 		* esMovimientoLegal puesto que se supone que siempre ha sido consultada previamente la
 		* legalidad de la jugada. Finalmente, gestiona el cambio de turno.
 		*/
-
+		//voy a colocar la piedra en la celda con el doble enganche
+		for(jugadores[/*aquí hay que especificar el jugadorturno de alguna manera*/]) {
+			celda.establecerPiedra(piedra);
+			piedra.colocarEn(celda);
+			//aquí creo que hay que hacer lo de unir y luego llamar a los métodos eliminarPiedras de la clase Grupo
+			// y eliminarPiedra de la clase Celda pero igual es una ida de olla
+		}
 		
+		/*for(Tablero.celdas[i].[j]*/
+		cambiarTurno();
 	}
 	
 	public boolean esMovimientoLegal(Celda celda) {
