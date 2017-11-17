@@ -8,17 +8,19 @@ package juego.modelo;
  * 
  */
 
-/** Clase Jugador
+/**
+ * Clase Jugador
  */
 public class Jugador {
 
-	/**String nombre del jugador */
+	/* String nombre del jugador */
 	private String nombre;
 
-	/**Color asociado al jugador */
+	/* Color asociado al jugador */
 	private Color color;
 
-	/** Metodo constructor Jugador
+	/**
+	 * Método constructor Jugador
 	 * @param nombre string
 	 * @param color color
 	 */
@@ -28,38 +30,40 @@ public class Jugador {
 
 	}
 
-	/** Metodo obtenerColor
-	 *@return color
+	/**
+	 * Método obtenerColor
+	 * @return color
 	 */
 	public Color obtenerColor() {
 		return color;
 	}
 
-	/** Metodo obtenerNombre
-	 *@return nombre
+	/**
+	 * Método obtenerNombre
+	 * @return nombre
 	 */
 	public String obtenerNombre() {
 		return nombre;
 	}
 	
-	/** Metodo generarPiedra
+	/**
+	 * Método generarPiedra
 	 * Genera una nueva piedra para el jugador
 	 * @return piedra
 	 */
-	
 	public Piedra generarPiedra() {
 		Piedra piedra = new Piedra(this.obtenerColor());
 		return piedra;
 	}
 
-	/** Metodo toString
-	 *@return resultado
+	/**
+	 * Método toString
+	 * devuelve el estado del jugador en formato
+	 * cadena de caracteres con su nombre y color asociado
+	 * @return resultado
 	 */
 	public String toString() {
-		//devuelve el estado del jugador en
-		//formato cadena de caracteres con su nombre y color asociado
 		String resultado = nombre + "/" + color;
 		return resultado;
 	}	
-
 }
