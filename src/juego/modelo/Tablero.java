@@ -13,22 +13,22 @@ import java.util.ArrayList;
  */
 
 
-/**Clase Tablero
- *
+/**
+ * Clase Tablero
  */
 public class Tablero {
 
 	/** Array de celdas */
 	private Celda[][] celdas;
 
-	/**Array list grupos*/
+	/** ArrayList grupos*/
 	private ArrayList grupos = new ArrayList();
 
-	/**filas y columnas son numericos */
+	/**filas y columnas son numéricos enteros*/
 	private int numeroFilas, numeroColumnas;
 
-	/**Metodo constructor Tablero
-	 *
+	/**
+	 * Método constructor Tablero
 	 */
 	public Tablero(int filas, int columnas) {
 		celdas = new Celda[filas][columnas];
@@ -41,21 +41,21 @@ public class Tablero {
 		}
 	}
 
-	/**Metodo colocar
-	 * Coloca la piedra en la celda (doble enganche).
+	/**
+	 * Método colocar
+	 * Coloca la piedra en la celda con un doble enganche
 	 * 
 	 * @param piedra piedra
 	 * @param celda celda
 	 */
-	
 	public void colocar(Piedra piedra, Celda celda) {
 		celda.establecerPiedra(piedra);
 		piedra.colocarEn(celda);
 	}
 
-
-	/**Metodo obtenerCelda
-	 * Devuelve las coordenadas de la celda.
+	/**
+	 * Método obtenerCelda
+	 * Devuelve las coordenadas de la celda
 	 *
 	 * @param fila int
 	 * @param columna int
@@ -67,9 +67,9 @@ public class Tablero {
 		return celdas[fila][columna];
 	}
 
-
-	/**Metodo obtenerCeldaMismasCoordenadas
-	 * Coloca la piedra en la celda (doble enganche).
+	/**
+	 * Método obtenerCeldaConMismasCoordenadas
+	 * Coloca la piedra en la celda con un doble enganche
 	 *
 	 * @param celda celda
 	 */
@@ -77,9 +77,9 @@ public class Tablero {
 		return obtenerCelda(celda.obtenerFila(), celda.obtenerColumna());
 	}
 
-
-	/**Metodo estaEnTablero
-	 * Comprueba que unas coordenadas estan en el tablero
+	/**
+	 * Método estaEnTablero
+	 * Comprueba que unas coordenadas están en el tablero
 	 *
 	 * @param celda celda
 	 */
@@ -90,13 +90,11 @@ public class Tablero {
 			}
 		}
 		return false;
-
 	}
 
-
-	/**Metodo obtenerNumeroPiedras
-	 *
-	 *cuenta el numero de piedras de un color que hay en el tablero
+	/**
+	 * Método obtenerNumeroPiedras
+	 * Cuenta el número de piedras de un color que hay en el tablero
 	 *
 	 * @param color color
 	 */
@@ -112,27 +110,22 @@ public class Tablero {
 		return contador;
 	}
 
-
-	/**Metodo obtenerNumeroFilas
-	 *
+	/**
+	 * Método obtenerNumeroFilas
 	 */
 	public int obtenerNumeroFilas() {
-		return this.numeroFilas;
-		
+		return this.numeroFilas;	
 	}
 
-
-
-	/**Metodo obtenerNumeroColumnas
-	 *
+	/**
+	 * Método obtenerNumeroColumnas
 	 */
 	public int obtenerNumeroColumnas() {
 		return this.numeroColumnas;
 	}
 
-
-	/**Metodo estaCompleto
-	 *
+	/**
+	 * Método estaCompleto
 	 */
 	public boolean estaCompleto() {
 		for (int i = 0; i < obtenerNumeroColumnas(); i++) {
@@ -148,40 +141,40 @@ public class Tablero {
 		//else 	System.out.println("El tablero no tiene ninguna celda vacía");
 	}
 
-
-	/**Metodo obtenerCeldasAdyacentes
-	 * comprueba si estan vacias las celdas proximas
+	/**
+	 * Método obtenerCeldasAdyacentes
+	 * comprueba si están vacías las celdas próximas
 	 *
 	 * @param celda celda
 	 *
-	 *@return adyacentes
+	 * @return adyacentes
 	 */
-	public ArrayList obtenerCeldasAdyacentes(Celda celda){
-		ArrayList adyacentes = new ArrayList();
+	public ArrayList obtenerCeldasAdyacentes(Celda celda) {
+		ArrayList adyacentes = new ArrayList();		
 		if(celda.obtenerFila() > 0) { //copiar y remplazar sentidos
 			adyacentes.add(obtenerCelda(celda.obtenerFila() + Sentido.NORTE.obtenerDesplazamientoVertical(), celda.obtenerColumna()));
 		}
 		if(celda.obtenerFila() > 0) {
 			adyacentes.add(obtenerCelda(celda.obtenerFila() + Sentido.SUR.obtenerDesplazamientoVertical(), celda.obtenerColumna()));
 		}
-		if(celda.obtenerFila() > 0){
+		if(celda.obtenerFila() > 0) {
 			adyacentes.add(obtenerCelda(celda.obtenerFila(), celda.obtenerColumna() + Sentido.ESTE.obtenerDesplazamientoHorizontal()));
-        }
-		if(celda.obtenerFila() > 0){
+		}
+		if(celda.obtenerFila() > 0) {
 			adyacentes.add(obtenerCelda(celda.obtenerFila(), celda.obtenerColumna() + Sentido.OESTE.obtenerDesplazamientoHorizontal()));
 		}
-        return adyacentes;
+		return adyacentes;
 	}
 
-
-	/**Metodo obtenerGradosDeLibertad
+	/**
+	 * Método obtenerGradosDeLibertad
 	 * Posibilidades de movimiento
 	 *
 	 * @param celda celda
 	 *
-	 *return gradosDeLibertad
+	 * return gradosDeLibertad
 	 */
-	public int obtenerGradosDeLibertad(Celda celda){
+	public int obtenerGradosDeLibertad(Celda celda) {
 		ArrayList adyacentes = new ArrayList();
 		adyacentes = obtenerCeldasAdyacentes(celda);
 		int gradosLibertad = 0;
@@ -194,45 +187,43 @@ public class Tablero {
 		return gradosLibertad;
 	}
 
-
-	/**Metodo generarCopia
+	/**
+	 * Método generarCopia
 	 * copia el tablero
 	 *
 	 * @return copiaTablero
 	 */
-	public Tablero generarCopia(){
+	public Tablero generarCopia() {
 		Tablero copiaTablero = new Tablero(numeroFilas, numeroColumnas);
-        for (int i = 0; i < obtenerNumeroColumnas(); i++) {
-            for (int j = 0; j < obtenerNumeroFilas(); j++) {
-                if ( ! obtenerCelda(i,j).estaVacia())
-                    copiaTablero.colocar(obtenerCelda(i,j).obtenerPiedra(),obtenerCelda(i,j));
-            }
-
-        }
-        return copiaTablero;
+        	for (int i = 0; i < obtenerNumeroColumnas(); i++) {
+			for (int j = 0; j < obtenerNumeroFilas(); j++) {
+				if ( ! obtenerCelda(i,j).estaVacia())
+					copiaTablero.colocar(obtenerCelda(i,j).obtenerPiedra(),obtenerCelda(i,j));
+			}
+        	}
+        	return copiaTablero;
 	}
 
-
-	/**Metodo obtenerGruposDelJugador
-	 *
-	 *devuelve una lista
+	/**
+	 * Método obtenerGruposDelJugador
+	 * devuelve una lista
 	 *
 	 * @param jugador jugador
 	 *
-	 *@return gurposEncontrados
+	 * @return gurposEncontrados
 	 */
-	public ArrayList obtenerGruposDelJugador(Jugador jugador){ //arraylist con <>
+	public ArrayList obtenerGruposDelJugador(Jugador jugador){
 		ArrayList gruposEncontrados = new ArrayList();
 		for (int i = 0; i < grupos.size(); i++) {
-			if(((Grupo) grupos.get(i)).obtenerColor() == jugador.obtenerColor()){
+			if(((Grupo) grupos.get(i)).obtenerColor() == jugador.obtenerColor()) {
 				gruposEncontrados.add(grupos.get(i));
 			}
 		}
 		return gruposEncontrados;
 	}
 
-
-	/**Metodo string
+	/**
+	 * Método String
 	 */
 	public String toString() {
 		//String resultado = nombre + "-" + color;
@@ -244,6 +235,5 @@ public class Tablero {
 		Piedra pieza = new Piedra(Color.BLANCO);
 		Celda celda = tablero.obtenerCelda(0, 0);
 		tablero.colocar(pieza, celda);
-		
 	}*/
 }
