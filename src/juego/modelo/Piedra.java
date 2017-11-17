@@ -8,7 +8,8 @@ package juego.modelo;
  * 
  */
 
-/** Clase Piedra
+/**
+ * Clase Piedra
  */
 public class Piedra {
 
@@ -18,14 +19,16 @@ public class Piedra {
 	/**argumento tipo Celda */
 	private Celda celda;
 
-	/** Metodo constructor Piedra
+	/**
+	 * Método constructor Piedra
 	 */
 	public Piedra(Color color) {
 		this.color = color;//obtenerColor();
 		this.colocarEn(celda);
 	}
 
-	/** Metodo obtenerColor
+	/**
+	 * Método obtenerColor
 	 * la piedra tiene un color asociado
 	 * @return color
 	 */
@@ -33,24 +36,26 @@ public class Piedra {
 		return this.color;
 	}
 
-	/** Metodo colocarEn
-	 *asocia una piedra a una celda
+	/**
+	 * Método colocarEn
+	 * asocia una piedra a una celda
 	 * @param celda celda
 	 */
 	public void colocarEn(Celda celda){
 		this.celda = celda;
-	
 	}
 
-	/** Metodo obtenerCelda
-	 *@return piedra
+	/**
+	 * Método obtenerCelda
+	 * @return piedra
 	 */
 	public Celda obtenerCelda() { 
 		return celda;
 	}
 
-	/** Metodo toString
-	 *@return obtenerCelda().toString() + "-" + obtenerColor().toString()
+	/**
+	 * Metodo toString
+	 * @return obtenerCelda().toString() + "-" + obtenerColor().toString()
 	 */
 	public String toString() {
 		return obtenerCelda().toString() + "-" + obtenerColor().toString();
