@@ -5,8 +5,9 @@ package juego.util;
  * 
  * @author <a href="mailto:rmartico@ubu.es">Raúl Marticorena</a>
  * @author <a href="mailto:dcaubilla@ubu.es">David Caubilla</a>
+ * @author González Román, Diego
+ * @author Martínez Taboada, Jesús
  * 
- * @version 1.0 20051122
  * @see juego.modelo.Tablero
  */
 public enum Sentido {
@@ -71,7 +72,10 @@ public enum Sentido {
 	private void establecerDesplazamientoVertical(int desplazamientoVertical) {
 		this.desplazamientoVertical = desplazamientoVertical;
 	}
- 
+	
+	/**
+	 * 
+	 */
 	public static void main(String[] args) {
 		//Ejemplos de como hacerlo
 		
@@ -85,11 +89,8 @@ public enum Sentido {
 		for (int i = 0; i < todosLosSentidos.length; i++) {
 			System.out.println(todosLosSentidos[i]+ " / " + todosLosSentidos[i]);
 		}*/
-		
-		
 		for(Sentido sentido : Sentido.values()) {
 			System.out.println(sentido +" / " + sentido.obtenerDesplazamientoHorizontal() + sentido.obtenerDesplazamientoVertical());
 		}
-	
 	}
 }
