@@ -12,14 +12,17 @@ import juego.util.ConversorJugada;
 
 /**
  * Juego del AtariGo. Ejercicio práctico - Metodología de la Programación.
- * <P>
- * 2º ITIG - Curso 2017-2018. Interfaz en modo texto del juego.
- * Versión de código incompleto a completar por los alumnos.
  * 
- * @author COMPLETAR
+ * 2º ITIG - Curso 2017-2018. Interfaz en modo texto del juego.
+ * 
+ * @author González Román, Diego
+ *
+ * @author Martínez Taboada, Jesús
+ *
  * @version 1.0
  * 
  */
+
 public class AtariGo {
 
 	/** Tamaño. */
@@ -35,8 +38,7 @@ public class AtariGo {
 	 *            nombres de los jugadores y tamaño del tablero
 	 */
 	public static void main(String[] args) {
-		/* Nota:
-		 * 
+		/* 
 		 * A COMPLETAR REUTILIZANDO LOS
 		 * MÉTODOS DISPONIBLES EN EL RESTO DEL CÓDIGO
 		 * NO MODIFICAR LOS MÉTODOS PRIVADOS DADOS. 
@@ -44,7 +46,7 @@ public class AtariGo {
 	}
 
 	/**
-	 * Realiza la jugada si es valida, mostrando un error en caso contario.
+	 * Realiza la jugada si es válida, mostrando un error en caso contario.
 	 * 
 	 * @param celda
 	 *            celda
